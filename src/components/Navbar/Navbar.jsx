@@ -56,7 +56,7 @@ export default function Navbar() {
         <div className={`${isOpen ? "block" : "hidden"} w-full md:block md:w-auto pt-2 lg:pt-0`} id="navbar-default">
           <ul className="font-medium flex flex-row flex-wrap items-center p-4 pe-0 md:p-0 md:space-x-8 rtl:space-x-reverse">
             <li>
-              <a href="https://wa.me/201066135369" target='_blank' className="block capitalize py-2 px-3 rounded-sm  md:border-0 hover:scale-125 transition-all duration-[.5s] md:p-0">
+              <a href="https://wa.me/201066135369" target='_blank' className="block py-2 px-3 rounded-sm  md:border-0 hover:scale-125 transition-all duration-[.5s] md:p-0">
                 <i className="fa-brands fa-whatsapp text-white text-[18px]"></i>
               </a>
             </li>
@@ -78,10 +78,9 @@ export default function Navbar() {
             </li>
             <li>
               <button className='btn text-primary bg-background'>
-                <PDFDownloadLink document={`/Mariam-Hesham-CV.pdf`} fileName="Mariam-Hesham-CV.pdf">
-                  <i className="fa-solid fa-arrow-down text-white me-2"></i>
+                <a href={`/Mariam-Hesham-CV.pdf`} target='_blank' fileName="Mariam-Hesham-CV.pdf">
                   Download CV
-                </PDFDownloadLink>
+                </a>
               </button>
             </li>
           </ul>

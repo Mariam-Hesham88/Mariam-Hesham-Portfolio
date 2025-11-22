@@ -25,19 +25,19 @@ export default function Education() {
   }, []);
 
   return (
-    <section className='w-full flex flex-wrap justify-center bg-background'>
-      <div className="w-full md:w-1/3 flex justify-center items-center">
+    <section className='flex flex-wrap justify-center w-full bg-background'>
+      <div className="flex items-center justify-center w-full md:w-1/3">
         <div>
           <img src={mariam} alt="Mariam" className='w-full pt-8 md:pt-0' />
         </div>
       </div>
 
-      <div className="w-full md:w-2/3 p-12 border-s-2 border-smothText">
-        <h1 className='secondTitle text-primary font-bold pt-2 pb-8'>Education</h1>
+      <div className="w-full p-12 md:w-2/3 border-s-2 border-smothText">
+        <h1 className='pt-2 pb-8 font-bold secondTitle text-primary'>Education</h1>
 
         {education.map((edu, i) => (
           <div key={edu.id} className="relative mb-4">
-            <span className='absolute icon -translate-x-1/2 translate-y-1/2'>
+            <span className='absolute -translate-x-1/2 translate-y-1/2 icon'>
               <i className="fa-solid fa-graduation-cap bg-background p-2 text-smothText text-[38px]"></i>
             </span>
             <h3 className='text-primary text-[28px] font-semibold ps-5 md:ps-1 '>{edu.course}</h3>

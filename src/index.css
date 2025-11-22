@@ -4,9 +4,12 @@
 
 
 /* Itim */
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap'); */
 /* Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); */
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import 'flowbite/dist/flowbite.css';
 
@@ -22,8 +25,12 @@ html {
   scroll-behavior: smooth;
 }
 
+body{
+  font-family: "Roboto", sans-serif;;
+}
+
 .mainTitle {
-  font-family: "Itim", cursive;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 66px;
   line-height: 48px;
@@ -42,7 +49,7 @@ html {
 }
 
 .secondTitle {
-  font-family: "Itim", cursive;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 38px;
   line-height: 28px;
@@ -64,7 +71,6 @@ html {
 
 .paragraph {
   color: var(--smothText);
-  font-family: "Inter", cursive;
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
@@ -73,7 +79,6 @@ html {
 
 .cardParagraph {
   color: var(--smothText);
-  font-family: "Inter", cursive;
   font-weight: 400;
   font-size: 16px;
   line-height: 25px;

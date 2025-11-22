@@ -24,9 +24,9 @@ const projects = [
       'Axios',
       'Formik',
       'Yup',
-      'TailwindCSS',
+      'Tailwind',
       'Context API',
-      'Vercel Deployment'
+      'Vercel'
     ],
     gitHubUrl: 'https://github.com/Mariam-Hesham88/React.js-Ecommerce',
     liveDemo: 'https://react-js-ecommerce.vercel.app/',
@@ -175,13 +175,13 @@ const projects = [
       </div>
     ),
     customPaging: i => (
-      <div className="w-3 h-3 bg-gray-400 rounded-full hover:bg-primary transition-all duration-300"></div>
+      <div className="w-3 h-3 transition-all duration-300 bg-gray-400 rounded-full hover:bg-primary"></div>
     ),
   };
 
   return (
     <section className='w-[90%] mx-auto p-12 flex flex-wrap justify-center relative'>
-      <h1 className='secondTitle w-full text-primary text-center font-bold pb-8'>
+      <h1 className='w-full pb-8 font-bold text-center secondTitle text-primary'>
         Featured Projects
       </h1>
 
@@ -189,25 +189,25 @@ const projects = [
         <Slider {...settings}>
           {projects.map((project) => (
             <div className="p-5">
-              <div key={project.id} className="item bg-secondary h-[700px] md:h-[600px] rounded-2xl shadow-md">
+              <div key={project.id} className="shadow-md item bg-secondary rounded-2xl">
                 <img src={project.imgSrc} alt={project.title} className='w-full rounded-t-2xl' />
                 <div className="p-6">
                   <h2 className='text-smothText font-semibold text-[20px] md:text-[24px] text-center'>
                     {project.title}
                   </h2>
                   <p className='text-gray-600 text-[14px] md:text-[16px] text-center py-2'>{project.description}</p>
-                  <div className="flex flex-wrap justify-center py-2 gap-2">
+                  <div className="flex flex-wrap justify-center gap-2 py-2">
                     {project.technology.map((tec, index) => (
-                      <span key={index} className='bg-primary text-white rounded-lg py-1 px-3 text-sm hover:scale-110 transition-all duration-300'>
+                      <span key={index} className='px-3 py-1 text-sm text-white transition-all duration-300 rounded-lg bg-primary hover:scale-110'>
                         {tec}
                       </span>
                     ))}
                   </div>
                   <div className="flex justify-center gap-6 pt-3">
-                    <a href={project.gitHubUrl} target='_blank' className="text-smothText hover:scale-125 transition-all duration-300">
+                    <a href={project.gitHubUrl} target='_blank' className="transition-all duration-300 text-smothText hover:scale-125">
                       <i className="fa-brands fa-github text-[22px]"></i> View Code
                     </a>
-                    <a href={project.liveDemo} target='_blank' className="text-smothText hover:scale-125 transition-all duration-300">
+                    <a href={project.liveDemo} target='_blank' className="transition-all duration-300 text-smothText hover:scale-125">
                       <i className="fa-solid fa-eye text-[22px]"></i> Live Demo
                     </a>
                   </div>
@@ -218,8 +218,8 @@ const projects = [
         </Slider>
       </div>
 
-      <div className='w-full flex justify-center'>
-        <a href='https://github.com/Mariam-Hesham88?tab=repositories' target='_blank' className='btn capitalize text-white bg-primary'>
+      <div className='flex justify-center w-full'>
+        <a href='https://github.com/Mariam-Hesham88?tab=repositories' target='_blank' className='text-white capitalize btn bg-primary'>
           View All Projects
         </a>
       </div>

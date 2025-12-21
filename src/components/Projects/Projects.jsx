@@ -18,7 +18,7 @@ export default function Projects() {
       imgSrc: mahmoud,
       title: "Mahmoud's Portfolio",
       description:
-        "A simple Random Quote Generator using HTML, CSS, and JavaScript. Displays new quotes dynamically with smooth transitions and responsive layout.",
+        "A freelance personal portfolio built with React and Tailwind CSS, featuring a responsive design to showcase projects, skills, and professional experience.",
       technology: ["React.JS", "TailwindCss", "Vercel"],
       gitHubUrl: "https://github.com/Mariam-Hesham88/Mahmoud-Atef---Portfolio",
       liveDemo: "https://mahmoud-atef-portfolio.vercel.app/",
@@ -28,7 +28,7 @@ export default function Projects() {
       imgSrc: doha,
       title: "Doha's Portfolio",
       description:
-        "A simple Random Quote Generator using HTML, CSS, and JavaScript. Displays new quotes dynamically with smooth transitions and responsive layout.",
+        "A freelance personal portfolio built with React and Tailwind CSS, featuring a responsive design to showcase projects, skills, and professional experience.",
       technology: ["React.JS", "TailwindCss", "Vercel"],
       gitHubUrl: "https://github.com/Mariam-Hesham88/Doha-Taher-Portfolio",
       liveDemo: "https://doha-taher-portfolio.vercel.app/",

@@ -215,6 +215,7 @@ export default function Projects() {
                   src={project.imgSrc}
                   alt={project.title}
                   className="w-full rounded-t-2xl"
+                  loading="lazy"
                 />
                 <div className="p-6">
                   <h2 className="text-smothText font-semibold text-[20px] md:text-[24px] text-center">

@@ -6,7 +6,7 @@ export default function Education() {
   const paragraphsRef = useRef([]);
 
   let education = [
-    { id:10, course:'React.JS', place:'Route Academy', start:'Jul 2025', end:'Sep 2025'},
+    { id:10, course:'Software Testing Diplome', place:'Route Academy', start:'Mar 2026', end:'Sep 2026'},
     { id:11, course:'.NET Full-Stack', place:'DEPI', start:'Sep 2024', end:'Dec 2024'},
     { id:12, course:'Front-End Development Course', place:'Route Academy', start:'March 2024', end:'Sep 2024'},
     { id:13, course:'Bachelor of Computer Science', place:'Future Academy', start:'Sep 2019', end:'Jul 2023'},

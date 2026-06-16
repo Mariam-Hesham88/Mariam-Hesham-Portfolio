@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import bankSystem from "../../assets/images/bankSystem.png";
 import shopCo from "../../assets/images/shop.co.jpg";
 import taskManagement from "../../assets/images/taskManagement.jpg";
 import note from "../../assets/images/note.jpg";
@@ -12,7 +13,19 @@ import mahmoud from "../../assets/images/mahmoud.png";
 import doha from "../../assets/images/doha.png";
 
 export default function Projects() {
-  const projects = [
+  const [activeTab, setActiveTab] = useState("testing");
+   const Testingprojects = [
+    {
+      id: 1,
+      imgSrc: bankSystem,
+      title: "Banking System Manual Testing Project [Guru99]",
+      description:
+        "Collaborated with a cross-functional team of 4 members to test a banking system, designing and executing 100+ test cases for account management and statement modules using EP and BVA techniques. Participated in requirement analysis, test design, defect reporting, and traceability activities, delivering comprehensive QA artifacts including User Stories, RTM, Test Cases, and Bug Reports.",
+      TC: "https://docs.google.com/spreadsheets/d/1GQ_8wgfUcIbIJ0_6QRHRdJBbvjmqYXkHmSJPO9M3Dp0/edit?gid=0#gid=0",
+      Bugs: "https://docs.google.com/spreadsheets/d/1GQ_8wgfUcIbIJ0_6QRHRdJBbvjmqYXkHmSJPO9M3Dp0/edit?gid=1097784977#gid=1097784977",
+    },]
+
+  const Frontendprojects = [
     {
       id: 9,
       imgSrc: mahmoud,
@@ -203,65 +216,183 @@ export default function Projects() {
         Featured Projects
       </h1>
 
-      <div className="cards w-full sm:w-[80%] md:w-[70%] lg:w-[60%] relative">
-        <Slider {...settings}>
-          {projects.map((project) => (
-            <div className="p-5">
-              <div
-                key={project.id}
-                className="shadow-md item bg-secondary rounded-2xl"
-              >
-                <img
-                  src={project.imgSrc}
-                  alt={project.title}
-                  className="w-full rounded-t-2xl"
-                  loading="lazy"
-                />
-                <div className="p-6">
-                  <h2 className="text-smothText font-semibold text-[20px] md:text-[24px] text-center">
-                    {project.title}
-                  </h2>
-                  <p className="text-gray-600 text-[14px] md:text-[16px] text-center py-2">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap justify-center gap-2 py-2">
-                    {project.technology.map((tec, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 text-sm text-white transition-all duration-300 rounded-lg bg-primary hover:scale-110"
-                      >
-                        {tec}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex justify-center gap-6 pt-3">
-                    <a
-                      href={project.gitHubUrl}
-                      target="_blank"
-                      className="transition-all duration-300 text-smothText hover:scale-125"
-                    >
-                      <i className="fa-brands fa-github text-[22px]"></i> View
-                      Code
-                    </a>
-                    <a
-                      href={project.liveDemo}
-                      target="_blank"
-                      className="transition-all duration-300 text-smothText hover:scale-125"
-                    >
-                      <i className="fa-solid fa-eye text-[22px]"></i> Live Demo
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </Slider>
+      {/* Projects Tabs */}
+      <div className="flex justify-center w-full gap-4 mb-8">
+        <button
+          onClick={() => setActiveTab("testing")}
+          className={`px-5 py-2 rounded-lg transition-all duration-300 ${
+            activeTab === "testing"
+              ? "bg-primary text-white"
+              : "bg-gray-200 text-primary"
+          }`}
+        >
+          Testing
+        </button>
+
+        <button
+          onClick={() => setActiveTab("frontend")}
+          className={`px-5 py-2 rounded-lg transition-all duration-300 ${
+            activeTab === "frontend"
+              ? "bg-primary text-white"
+              : "bg-gray-200 text-primary"
+          }`}
+        >
+          Frontend
+        </button>
+
+        <button
+          onClick={() => setActiveTab("backend")}
+          className={`px-5 py-2 rounded-lg transition-all duration-300 ${
+            activeTab === "backend"
+              ? "bg-primary text-white"
+              : "bg-gray-200 text-primary"
+          }`}
+        >
+          Backend
+        </button>
       </div>
 
-      <div className="flex justify-center w-full">
+      {/* Testing Projects */}
+      {activeTab === "testing" && (
+        <div className="w-full pt-2 pb-10 text-center">
+          <div className="flex justify-center w-full">
+            <div className="w-full sm:w-[80%] md:w-[70%] lg:w-[60%] relative">
+              <Slider {...settings}>
+                {Testingprojects.map((project) => (
+                  <div key={project.id} className="p-5">
+                    <div className="overflow-hidden shadow-md bg-secondary rounded-2xl">
+                      <img
+                        src={project.imgSrc}
+                        alt={project.title}
+                        className="w-full rounded-t-2xl"
+                        loading="lazy"
+                      />
+
+                      <div className="p-6">
+                        <h2 className="text-smothText font-semibold text-[20px] md:text-[24px] text-center">
+                          {project.title}
+                        </h2>
+
+                        <p className="text-gray-600 text-[14px] md:text-[16px] text-center py-2">
+                          {project.description}
+                        </p>
+
+                        <div className="flex justify-center gap-6 pt-3">
+                          <a
+                            href={project.TC}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="transition-all duration-300 text-smothText hover:scale-125"
+                          >
+                            <i className="fa-solid fa-eye text-[22px]"></i>{" "}
+                            Testcases
+                          </a>
+
+                          <a
+                            href={project.Bugs}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="transition-all duration-300 text-smothText hover:scale-125"
+                          >
+                            <i className="fa-solid fa-eye text-[22px]"></i> Live
+                            Bugs Reports
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ------------------------------------------------------------------------------------------------------------------ */}
+      {/* Frontend Projects */}
+      {activeTab === "frontend" && (
+        <div className="flex justify-center w-full">
+          <div className="w-full sm:w-[80%] md:w-[70%] lg:w-[60%] relative">
+            <Slider {...settings}>
+              {Frontendprojects.map((project) => (
+                <div key={project.id} className="p-5">
+                  <div className="overflow-hidden shadow-md bg-secondary rounded-2xl">
+                    <img
+                      src={project.imgSrc}
+                      alt={project.title}
+                      className="w-full rounded-t-2xl"
+                      loading="lazy"
+                    />
+
+                    <div className="p-6">
+                      <h2 className="text-smothText font-semibold text-[20px] md:text-[24px] text-center">
+                        {project.title}
+                      </h2>
+
+                      <p className="text-gray-600 text-[14px] md:text-[16px] text-center py-2">
+                        {project.description}
+                      </p>
+
+                      <div className="flex flex-wrap justify-center gap-2 py-2">
+                        {project.technology.map((tec, index) => (
+                          <span
+                            key={index}
+                            className="px-3 py-1 text-sm text-white transition-all duration-300 rounded-lg bg-primary hover:scale-110"
+                          >
+                            {tec}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="flex justify-center gap-6 pt-3">
+                        <a
+                          href={project.gitHubUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="transition-all duration-300 text-smothText hover:scale-125"
+                        >
+                          <i className="fa-brands fa-github text-[22px]"></i>{" "}
+                          View Code
+                        </a>
+
+                        <a
+                          href={project.liveDemo}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="transition-all duration-300 text-smothText hover:scale-125"
+                        >
+                          <i className="fa-solid fa-eye text-[22px]"></i> Live
+                          Demo
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
+      )}
+
+      {/* Backend Projects */}
+      {activeTab === "backend" && (
+        <div className="w-full py-10 text-center">
+          <h2 className="mb-3 text-3xl font-bold text-primary">
+            {" "}
+            Backend Projects{" "}
+          </h2>
+          <p className="text-gray-600">
+            {" "}
+            Backend projects will be added soon ...{" "}
+          </p>
+        </div>
+      )}
+
+      <div className="flex justify-center w-full mt-8">
         <a
           href="https://github.com/Mariam-Hesham88?tab=repositories"
           target="_blank"
+          rel="noreferrer"
           className="text-white capitalize btn bg-primary"
         >
           View All Projects

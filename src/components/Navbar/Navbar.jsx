@@ -135,30 +135,3 @@ export default function Navbar() {
     </>
   )
 }
-
-<nav className="fixed top-0 left-0 right-0 z-50 px-10 border-gray-200 bg-primary">
-        <div className="flex flex-wrap items-center justify-between max-w-screen-xl gap-8 py-3 mx-auto">
-
-          {/* Menu */}
-          <div className="w-full md:block md:w-auto">
-            <ul className="flex flex-col p-2 font-medium md:p-0 md:flex-row md:space-x-8">
-                <li>
-                  <Link className="block px-1 py-2 text-white capitalize transition-all duration-300 rounded-sm cursor-pointer hover:text-background">
-                    Manual Testing
-                  </Link>
-                </li>
-                <li>
-                  <Link className="block px-1 py-2 text-white capitalize transition-all duration-300 rounded-sm cursor-pointer hover:text-background">
-                    Front-End
-                  </Link>
-                </li>
-                <li>
-                  <Link className="block px-1 py-2 text-white capitalize transition-all duration-300 rounded-sm cursor-pointer hover:text-background">
-                    Backend-End
-                  </Link>
-                </li>
-            </ul>
-          </div>
-
-        </div>
-      </nav>
